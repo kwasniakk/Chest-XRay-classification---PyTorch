@@ -81,7 +81,7 @@ class Analyzer:
         df_val_cm = pd.DataFrame(History.confusion_matrix_history["Validation Confusion Matrices"][epoch], index = classes, columns = classes)
 
 
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize = (21, 9), dpi = 450)
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize = (16, 9), dpi = 70)
         sns.heatmap(df_train_cm, annot = True, fmt = "d", cmap = "viridis", xticklabels = classes, yticklabels = classes, ax = ax1)
         ax1.set_title("Training")
         sns.heatmap(df_val_cm, annot = True, fmt = "d", cmap = "viridis", xticklabels = classes, yticklabels = classes, ax = ax2)
@@ -98,7 +98,7 @@ class Analyzer:
             History ([Object]): [Model History]
         """
         plt.style.use("ggplot")
-        fig = plt.figure(figsize = (21, 10), dpi = 450)
+        fig = plt.figure(figsize = (21, 10), dpi = 70)
         x, y = History.metrics.items()
         metrics_to_display = ["Precision","Recall", "F1", "Loss", "Accuracy"]
         ax1 = plt.subplot2grid((2,6), (0,0), colspan=2)
@@ -119,7 +119,7 @@ class Analyzer:
     @staticmethod
     def plot_metrics(History):
         plt.style.use("ggplot")
-        fig = plt.figure(figsize = (21, 10), dpi = 450)
+        fig = plt.figure(figsize = (21, 10), dpi = 70)
         x, y = History.metrics.items()
         metrics_to_display = ["Loss", "Accuracy"]
         ax1 = plt.subplot2grid((1,2), (0,0))
