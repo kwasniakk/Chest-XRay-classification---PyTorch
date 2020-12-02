@@ -18,7 +18,7 @@ chest_xray/
 ### Model
 I'm using a pretrained version of ResNet18 from [torchvision.models](https://pytorch.org/docs/stable/torchvision/models.html). It is fine-tuned on a NVIDIA GTX 1050 Ti GPU.
 ### Evaluation  
-The model seems to be handling the data pretty well, as shown in confusion matrices and recall, the model is more likely to classify healthy lungs as pneumonia infected lungs as only 7 out of 390 pneumonia images in validation dataset have been incorrectly classified, and all pneumonia test images have been correctly classified.
+The model seems to be handling the data pretty well, as shown in confusion matrices and logged metrics. In total, 104 images have been incorrectly classified. There is a much higher possibility of a healthy patient to be classified as as sick than the other way around, which means that fewer infected patients will go without treatment.
 ![confusion matrix](ConfusionMatrix.png)
  However, there are serious signs of overfitting.
 ![plots](metrics.png)
